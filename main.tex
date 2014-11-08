@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{algorithme}
+\usepackage{siunitx}
+\usepackage {titlesec}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{sectsty}
+
+
+\usepackage{arabtex}
+\usepackage{utf8}
+
+\pagestyle{fancy}
+
+
+
+\titleformat{\chapter}[display]  
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}  
+\titlespacing{\chapter}{0pt}{-20pt}{40pt}  
+
+
+\begin{document}
+\let\cleardoublepage\clearpage
+%\pagestyle {empty}
+\frontmatter
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT
+%----------------------------------------------------------------------------------------
+
+%\lhead{\emph{Sommaire}} % Set the left side page header to "Contents"
+\tableofcontents % Write out the Table of Contents
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\setlength\parindent{24pt}
+
+%\pagestyle {fancy}
+
+%\renewcommand \headrulewidth {3pt}
+%\fancyhead [L]{} % pour avoir le nom et numéro du chapitre en cours en haut à gauche dans l’entete.
+%\renewcommand \footrulewidth {1pt}
+%\fancyfoot [C]{\pageref }
+
+%\fancyfoot [C]{\LaTeX :\\ \textbf {Page : \thepage /\pageref {LastPage}}}
+
+\setcounter{page}{1}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\fancyfoot [C]{\thepage }
+
+\input{Chapters/Chapter0}
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2} 
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+
+%\bibliography{bib}
+
+%\clearpage % Start a new page
+\end{document}

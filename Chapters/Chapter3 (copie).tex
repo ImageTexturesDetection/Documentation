@@ -1,0 +1,173 @@
+% Chapter Template
+
+\chapter{Application et tests} % Main chapter title
+
+\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\lhead{Chapter 3. \emph{Application et tests}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Dans ce chapitre, nous allons décrire notre application, avec les détails des fonctionnalités disponibles.
+
+%-----------------------------------
+%	SECTION 2
+%-----------------------------------
+
+\section{Outils utilisés}
+
+\indent Nous avons choisi comme langage de programmation le langage Python2.7 et ce pour diverses raisons dont on site [HOY 10]:\\
+\begin{itemize}
+
+\item Facilité d’écriture et de compréhension du code. On trouve moins de barrière entre la génération d'idée, et leurs traduction en code.\\
+\item Balance entre langage de haut et de bas niveau. Ce qui forme un point fort du langage.\\
+\item L'interopérabilité avec les autres langages, ou la capacité très utile à pouvoir appeler des script d'autre langages facilement.\\
+\item Le grand nombre de bibliothèques disponibles.\\
+\item La documentation abondante.
+
+\end{itemize}
+\indent Le traitement bas niveau des images se fait avec la bibliothèque graphique libre OpenCV qui propose un bon nombre de fonctions permettant d'effectuer les opérations classiques.\\
+\indent Nous avons choisi d'utiliser pour le développement de l'interface graphique le framework PyQt, un module qui permet de lier le langage Python avec la bibliothèque Qt. En utilisant l'environnement \textit{Qt4 Designer version 4.8.1}.
+
+Pour améliorer la vitesse de découpage, il s'est avéré qu'appeler un script matlab est bien plus intéressant en terme de temps d’exécution que de reprogrammer le script en python.
+La version de matlab utilisée étant \textit{R2012a 7.14.0.739 32-bit(glnx86)} 
+
+Ce document est rédigé en \textit{Latex}, avec \textit{Texmaker 3.2}.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Presentation et test de l'application:}
+
+Nous commençons par exécuter l'application:
+
+\iffalse
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{cc}
+\centering
+\includegraphics[width=5cm,]{Figures/chap3/1.png}
+&
+\includegraphics[width=8cm,]{Figures/chap3/2.png}\\
+
+Fenêtre principale.
+ &
+Parcours des dossiers.
+
+\end{tabular}
+\caption[application]{Démarrage de l'application.}
+\end{figure}
+
+\fi
+
+Elle nous permet de choisir une image en cliquant sur Browse pour parcourir nos fichiers, ou en collant directement son chemin absolu.\\
+Nous choisissons ensuite la valeur du \textit{threshold}.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=5cm,]{Figures/chap3/3.png}
+			\caption[choice1]{Fenêtre principale.}
+	\label{fig:choice1}
+\end{figure}
+
+\indent Nous avons après cela le choix entre deux méthodes: 
+\begin{itemize}
+
+
+\item Automatic Processing: qui fait un traitement automatique des textures \\
+\item Controled Processing: qui permet d'avoir plus de contrôle sur le traitement et la reconnaissance des textures. Il est aussi considéré comme processus d’entraînement de l'analyseur.\\
+\end{itemize}
+\indent Commençons par le traitement automatique. La fenêtre de la [Figure 3.2] nous est affiché, elle montre à droite l'image sélectionnée et en bas le \textit{threshold}, avec possibilité de les modifier.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/4.png}
+	\caption[traitementAuto]{Traitement automatique.}
+	\label{fig:traitementAuto}
+\end{figure}
+
+\indent Nous cliquons sur \textit{Process} pour lancer le traitement.
+Après quelques instants, le résultats de la détection et coloration des textures nous est affiché à droite de la fenêtre. [Figure 3.3]
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/5.jpg}
+	\caption[traitementAutofin]{Traitement automatique fini.}
+	\label{fig:traitementAutofin}
+\end{figure}
+
+\indent L'image résultante est automatiquement enregistré dans le dossier contenant l'application. Comme expliqué dans le précédent chapitre, les \textit{thresholds} utilisés pour les différentes textures détectées sont tirés d'une base de données remplit à chaque usage du traitement contrôlé.
+
+\indent Nous revenons vers le menu principale en cliquant sur le bouton \textit{Back to main menu}, et nous choisissons cette fois \textit{Controled Processing}.
+Nous allons tester le traitement contrôlé où nous allons pouvoir modifier à chaque fois le \textit{threshold} de chaque texture détectée. Nous changerons aussi les informations présente dans la base de donnée en sauvegardant les résultats satisfaisants des détections d'une texture x.\\
+\indent Prenons un exemple.[Figure 3.4] La première étape étant identique au traitement automatique, nous choisissons l'image et un \textit{threshold} par défaut. Nous commençons le traitement en cliquant sur \textit{Proces}.
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/Capture4343.png}
+	\caption[traitementAutofin]{Traitement contrôlé - Itération 1.}
+	\label{fig:traitementAutofin}
+\end{figure}
+
+
+\indent Une première texture est détectée, et les régions ressemblantes à cette dernière sont coloriées. Remarquons que le \textit{threshold} utilisé (\textit{Actual threshold 0.961}) est différent de celui choisi pour être par défaut (\textit{Initial threshold 0.960}). Ceci est du au fait que la même texture, ou une texture fortement ressemblante ai été trouvé dans la base de donnée. Le \textit{threshold} de cette dernière a été donc choisi.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/Capture4543.png}
+	\caption[traitementAutofin]{Traitement contrôlé - Itération 2.}
+	\label{fig:traitementAutofin}
+\end{figure}
+
+\indent Nous avons, ensuite, la main pour choisir de sauvegarder le \textit{threshold} dans la base de donnée, de continuer si le résultat est satisfaisant, ou de changer ce premier et rechercher les zones ressemblantes à la texture détectée à nouveau [Figure 3.5].
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/Capture4640.png}
+	\caption[traitementAutofin]{Traitement contrôle - Itération 3.}
+	\label{fig:traitementAutofin}
+\end{figure}
+
+Nous choisissons de continuer.[Figure 3.6]
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/Capture4826.png}
+	\caption[traitementAutofin]{Traitement contrôlé - Itération 4.}
+	\label{fig:traitementAutofin}
+\end{figure}
+
+\indent Pour la prochaine texture, la détection n'étant pas satisfaisante, nous choisissons de changer le \textit{threshold}.[3.7]
+
+Nous cliquons sur apply pour cela après avoir choisi un nouveau \textit{threshold} dans la partie \textit{Change threshold} [Figure 3.8].
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/Capture5010.png}
+	\caption[traitementAutofin]{Traitement controlé - Itération 5.}
+	\end{figure}
+
+\indent Nous allons sauvegarder ce \textit{threshold} dans la base de donnée en appuyant sur le bouton \textit{Save} pour que la prochaine fois cette valeur sera utilisé automatiquement.
+
+Le processus continue de la sorte jusqu’à ce que toutes les textures de l'image soient détectées [Figure 3.9].
+
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=9cm,]{Figures/chap3/Capture5253.png}
+	\caption[traitementAutofin]{Traitement contrôlé - Itération 7.}
+\end{figure}
+
+
+\section{Conclusion}
+
+\indent Dans ce dernier chapitre nous avons décrit l'interface de notre application et les détails de son fonctionnement. Nous avons fait une démonstration des deux différents modes d'utilisation qui peuvent être utilisés : \textbf{automatique} et \textbf{contrôlé} (étape d'apprentissage) et avons aussi exposé les multiples options proposées dans ce dernier mode.\\
+\indent Nous avons présenté une série de testes effectué sur différentes images aléatoirement construites et qui donnent des résultats excellent et très prometteurs.\\
+\indent Enfin, nous avons vu l'indépendance de cette méthode des formes utilisées pour la recherche et la reconnaissance des textures, qui représente un très grand avantage.

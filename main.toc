@@ -1,0 +1,34 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur la segmentation de texture}{2}
+\contentsline {section}{\numberline {1.1}introduction}{2}
+\contentsline {section}{\numberline {1.2}D\IeC {\'e}finition de la texture}{2}
+\contentsline {section}{\numberline {1.3}Segmentation d\IeC {\textquoteright }images}{3}
+\contentsline {section}{\numberline {1.4}Les approches analytiques}{4}
+\contentsline {subsection}{\numberline {1.4.1}Textures structurelles}{5}
+\contentsline {subsection}{\numberline {1.4.2}Textures al\IeC {\'e}atoires}{5}
+\contentsline {subsection}{\numberline {1.4.3}Textures directionnelles}{6}
+\contentsline {section}{\numberline {1.5}Motif binaire local (LBP-Local Binary Pattern)}{6}
+\contentsline {subsection}{\numberline {1.5.1}LBP et le niveau de gris}{9}
+\contentsline {subsection}{\numberline {1.5.2}Variantes de la LBP}{10}
+\contentsline {section}{\numberline {1.6}Conclusion}{10}
+\contentsline {chapter}{\numberline {2}Conception}{12}
+\contentsline {section}{\numberline {2.1}Introduction}{12}
+\contentsline {section}{\numberline {2.2}Vue global de notre approche}{12}
+\contentsline {section}{\numberline {2.3}M\IeC {\'e}thode de d\IeC {\'e}coupage}{12}
+\contentsline {subsection}{\numberline {2.3.1}D\IeC {\'e}finition}{12}
+\contentsline {subsection}{\numberline {2.3.2}Algorithme de d\IeC {\'e}coupage dynamique}{13}
+\contentsline {section}{\numberline {2.4}G\IeC {\'e}n\IeC {\'e}ralisation de la m\IeC {\'e}thode de recherches dynamique}{14}
+\contentsline {subsection}{\numberline {2.4.1}Algorithme de g\IeC {\'e}n\IeC {\'e}ralisation}{14}
+\contentsline {subsection}{\numberline {2.4.2}Interpr\IeC {\'e}tation de l'algorithme}{15}
+\contentsline {subsection}{\numberline {2.4.3}Variantes}{18}
+\contentsline {subsubsection}{LBP \IeC {\`a} rotation invariante }{18}
+\contentsline {subsubsection}{Segmentation par des formes circulaires}{19}
+\contentsline {section}{\numberline {2.5}Cr\IeC {\'e}ation des images de test}{21}
+\contentsline {section}{\numberline {2.6}Conclusion}{22}
+\contentsline {chapter}{\numberline {3}Application et tests}{23}
+\contentsline {section}{\numberline {3.1}Introduction}{23}
+\contentsline {section}{\numberline {3.2}Outils utilis\IeC {\'e}s}{23}
+\contentsline {section}{\numberline {3.3}Presentation et test de l'application:}{23}
+\contentsline {section}{\numberline {3.4}Tests et int\IeC {\'e}rpretation des r\IeC {\'e}sultats:}{27}
+\contentsline {subsection}{\numberline {3.4.1}Tests supl\IeC {\'e}mentaires}{31}
+\contentsline {section}{\numberline {3.5}Conclusion}{31}
